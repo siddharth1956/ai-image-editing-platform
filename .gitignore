@@ -1,0 +1,6 @@
+.env
+__pycache__/
+data/images/*
+data/metadata.json
+*.DS_Store
+
