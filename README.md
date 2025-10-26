@@ -1,49 +1,62 @@
-This is your short project summary and architecture write-up (required for Week 1 submission).
-Create a new Markdown file called README.md and paste the following template:
-# AI-Powered Image Editing Platform — Week 1
+🧠 AI-Powered Image Editing Platform
 
-## 🎯 Objective
-Build the foundation of an AI-first image editing platform that allows users to upload, view, and manage images with automatic captioning and search.
+🚀 A Next-Generation Generative AI Web App for Intuitive Image Editing
 
-## 🧩 Features (Week 1)
-- Upload one or multiple images
-- Store image metadata locally (`data/metadata.json`)
-- Auto-generate captions (local fallback; Vision API ready)
-- Display all images in a grid view
-- Natural-language search (substring)
-- Image detail page + version history structure
+This project is a full-stack AI-powered web application that enables users to upload, edit, search, and manage images using natural language commands.
+Unlike traditional editors like Photoshop, this platform uses Generative AI (OpenAI GPT & Embedding APIs) to perform image editing, caption generation, and semantic search — all through simple text instructions.
+🪄 Overview
 
-## 🛠️ Tech Stack
-- **Frontend:** Streamlit  
-- **Backend:** Local JSON (no external DB yet)  
-- **Language:** Python 3.9+  
-- **Libraries:** Streamlit, Pillow  
+The AI-Powered Image Editing Platform allows users to:
+	•	Upload and manage multiple images
+	•	Generate AI-based captions and embeddings
+	•	Perform image edits using natural language prompts (e.g., “remove the background”, “add a sunset sky”)
+	•	Track version history for each edited image
+	•	Search across the image library using natural language queries (e.g., “show images with trees”)
 
-## 📁 Project Structure
+This project is designed as a portfolio-ready MVP demonstrating full-stack AI integration using Streamlit, OpenAI APIs, and Python.
 AI-Powered Image Editing Platform/
-├── app.py
-├── requirements.txt
-├── README.md
+├── app.py                 # Main Streamlit App
+├── prompt_handler.py      # Edit Prompt Testing Script
+├── data/
+│   ├── images/            # Uploaded + Edited Images
+│   └── metadata.json      # Metadata with captions, embeddings & versions
+├── requirements.txt       # Dependencies
+├── .env                   # API Key (Excluded via .gitignore)
 ├── .gitignore
-└── data/
-├── images/
-└── metadata.json
+└── README.md              # Project Documentation
 
-## 🚀 How to Run
-```bash
-# Clone repo and enter folder
-git clone <repo-link>
-cd "AI-Powered Image Editing Platform"
+⚙️ Setup Instructions
+git clone https://github.com/siddharth1956/ai-image-editing-platform.git
+cd ai-image-editing-platform
 
-# Install dependencies
-pip install -r requirements.txt
+2️⃣ Create your environment
+python3 -m venv venv
+source venv/bin/activate
 
-# Run app
+4️⃣ Add your OpenAI API Key
+
+Create a .env file in the project root:
+OPENAI_API_KEY=your_openai_key_here
+
+5️⃣ Run the app
 streamlit run app.py
 
-🧠 Architecture Summary
-	1.	Upload Interface: Users upload images via Streamlit sidebar.
-	2.	Storage: Images are saved in data/images/; metadata stored in data/metadata.json.
-	3.	Captioning: A local placeholder generates captions (to be replaced by a Vision API).
-	4.	Search: Simple substring match on captions and filenames.
-	5.	Version Tracking: Each image has a versions array for future edited versions.
+🧑‍💻 Usage Guide
+
+🔹 Upload Images
+	•	Click Upload in the sidebar to add one or more images (.png, .jpg, .jpeg).
+	•	The app automatically generates basic captions and embeddings.
+
+🔹 Search with Natural Language
+	•	In the sidebar search box, type queries like:
+	•	sunset
+	•	mountain
+	•	person wearing red
+	•	The app uses semantic similarity to find matching images.
+
+🔹 Edit an Image
+	•	Click View / Edit on any image.
+	•	Enter a natural prompt like:
+	add a blue sky
+remove the person on the left
+make background white
